@@ -34,9 +34,10 @@ Sistema para análisis y recomendación de libros con integración a base de dat
 1. **Clonar repositorio**:
   
    git clone https://github.com/tu-usuario/bobeda.git
+
    cd bobeda
 
-2. **Configurar entorno virtual**:
+3. **Configurar entorno virtual**:
 
     python -m venv venv
    
@@ -114,41 +115,78 @@ python analisis_libros.py
 **Estructura general**
 
 BOBEDA/
+
 ├── accounts/
+
 │   ├── __pycache__/
+
 │   ├── migrations/
+
 │   ├── __init__.py
+
 │   ├── admin.py
+
 │   ├── apps.py
+
 │   ├── models.py
+
 │   ├── serializers.py
+
 │   ├── tests.py
+
 │   ├── urls.py
+
 │   └── views.py
+
 ├── bobeda/
+
 │   ├── __pycache__/
+
 │   ├── __init__.py
+
 │   ├── asgi.py
+
 │   ├── settings.py
+
 │   ├── urls.py
+
 │   └── wsgi.py
+
 ├── libros/
+
 │   ├── __pycache__/
+
 │   ├── migrations/
+
 │   ├── __init__.py
+
+
 │   ├── admin.py
+
 │   ├── apps.py
+
 │   ├── models.py
+
 │   ├── serializers.py
+
 │   ├── tests.py
+
 │   ├── urls.py
+
 │   └── views.py
+
 ├── reporters/ (vacío)
+
 ├── venv/
+
 ├── analisis_libros.py
+
 ├── LICENSE
+
 ├── manage.py
+
 ├── READML.md
+
 └── requirements.txt
 
 ## Licencia  
