@@ -39,13 +39,14 @@ Sistema para análisis y recomendación de libros con integración a base de dat
 2. **Configurar entorno virtual**:
 
     python -m venv venv
-    venv\Scripts\activate     # Windows
+   
+    venv\Scripts\activate    # Windows
 
-3. **Instalar dependencias**:
+4. **Instalar dependencias**:
 
     pip install -r requirements.txt
 
-4. **Configurar base de datos**:
+5. **Configurar base de datos**:
 
    1. Exportar BD desde pgAdmin (Para administradores)
         Abre pgAdmin y haz clic derecho en tu BD
@@ -80,7 +81,7 @@ Sistema para análisis y recomendación de libros con integración a base de dat
     # Aplicar migraciones
         python manage.py migrate
 
-5. **Iniciar servidor**
+6. **Iniciar servidor**
 python manage.py runserver
 Accede al sistema en: http://localhost:8000
 
