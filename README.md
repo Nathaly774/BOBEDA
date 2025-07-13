@@ -65,7 +65,8 @@ Sistema para análisis y recomendación de libros con integración a base de dat
         psql -U postgres -d bobeda_dev < database/bobeda_backup.sql
 
     3. Configurar variables de entorno
-        Crea un archivo .env en la raíz del proyecto:
+
+           Crea un archivo .env en la raíz del proyecto:
 
 
     # PostgreSQL
@@ -83,18 +84,30 @@ Sistema para análisis y recomendación de libros con integración a base de dat
         python manage.py migrate
 
 6. **Iniciar servidor**
-python manage.py runserver
-Accede al sistema en: http://localhost:8000
+
+        python manage.py runserver
+        Accede al sistema en: http://localhost:8000
 
 **Comandos Útilies**
+    
     # Crear superusuario
-python manage.py createsuperuser
+    python manage.py createsuperuser
+    
     # Crear reporte
-python analisis_libros.py
-    #Crear libro
-    http://127.0.0.1:8000/api/books/
-    {
-  "title": "Dune",
+    python analisis_libros.py
+    
+    # Sign up (POST)
+      http://127.0.0.1:8000/api/auth/signup/
+      
+     # Login (POST)
+       http://127.0.0.1:8000/api/auth/login/
+       
+     #Crear libro (POST)
+       http://127.0.0.1:8000/api/books/
+       
+
+       {
+    "title": "Dune",
     "author": 1,
     "published_date": "1965-06-01",
     "isbn": "9780441172719",
@@ -103,103 +116,76 @@ python analisis_libros.py
     "genre_ids": [1, 2]
     }
 
-**Como usar el generador de reportes**
- * Crear reporte
-    python analisis_libros.py
+    #Crear rating/calificación (POST)
+    http://127.0.0.1:8000/admin/libros/rating/add/
+
+    #Ver calificación de libro (1 al 5) (GET)
+    http://127.0.0.1:8000/api/books/1/ratings/ 
+
+    #Ver calificacion en filtro (GET)
+    http://127.0.0.1:8000/api/books/recommend/?genres=5&min_rating=4
+
+    # Ver libros (GET)
+    http://127.0.0.1:8000/api/books/
+
     
-* Seleccionar opciones del menú:
+  * Seleccionar opciones del menú:
 
-    Opción 1: Análisis completo de todos los libros
+        Opción 1: Análisis completo de todos los libros
 
-    Opción 2: Análisis específico por género
+        Opción 2: Análisis específico por género
 
-    Opción 3: Salir
+        Opción 3: Salir
 
-* Resultados generados:
+    * Resultados generados:
 
-    Reporte en consola con los análisis
+          Reporte en consola con los análisis
 
-    PDF profesional en la carpeta reportes/
+          PDF en la carpeta reportes/
 
-    Gráficos y tablas listos para presentación
+          Gráficos y tablas listos para presentación
 
-**Estructura general**
+ 
+ **Estructura general**
 
-BOBEDA/
-
-├── accounts/
-
-│   ├── __pycache__/
-
-│   ├── migrations/
-
-│   ├── __init__.py
-
-│   ├── admin.py
-
-│   ├── apps.py
-
-│   ├── models.py
-
-│   ├── serializers.py
-
-│   ├── tests.py
-
-│   ├── urls.py
-
-│   └── views.py
-
-├── bobeda/
-
-│   ├── __pycache__/
-
-│   ├── __init__.py
-
-│   ├── asgi.py
-
-│   ├── settings.py
-
-│   ├── urls.py
-
-│   └── wsgi.py
-
-├── libros/
-
-│   ├── __pycache__/
-
-│   ├── migrations/
-
-│   ├── __init__.py
-
-
-│   ├── admin.py
-
-│   ├── apps.py
-
-│   ├── models.py
-
-│   ├── serializers.py
-
-│   ├── tests.py
-
-│   ├── urls.py
-
-│   └── views.py
-
-├── reporters/ (vacío)
-
-├── venv/
-
-├── analisis_libros.py
-
-├── LICENSE
-
-├── manage.py
-
-├── READML.md
-
-└── requirements.txt
-
+    BOBEDA/
+    ├── accounts/
+    │   ├── __pycache__/
+    │   ├── migrations/
+    │   ├── __init__.py
+    │   ├── admin.py
+    │   ├── apps.py
+    │   ├── models.py
+    │   ├── serializers.py
+    │   ├── tests.py
+    │   ├── urls.py
+    │   └── views.py
+    ├── bobeda/
+    │   ├── __pycache__/
+    │   ├── __init__.py
+    │   ├── asgi.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    ├── libros/
+    │   ├── __pycache__/
+    │   ├── migrations/
+    │   ├── __init__.py
+    │   ├── admin.py
+    │   ├── apps.py
+    │   ├── models.py
+    │   ├── serializers.py
+    │   ├── tests.py
+    │   ├── urls.py
+    │   └── views.py
+    ├── reporters/ (vacío)
+    ├── venv/
+    ├── analisis_libros.py
+    ├── LICENSE
+    ├── manage.py
+    ├── READML.md
+    └── requirements.txt
+  
 ## Licencia  
 Bobeda se distribuye bajo una licencia de uso **exclusivamente educativo y no comercial**.  
 Consulta el archivo [LICENSE.md] para más detalles.  
