@@ -91,6 +91,17 @@ Accede al sistema en: http://localhost:8000
 python manage.py createsuperuser
     # Crear reporte
 python analisis_libros.py
+    #Crear libro
+    http://127.0.0.1:8000/api/books/
+    {
+  "title": "Dune",
+    "author": 1,
+    "published_date": "1965-06-01",
+    "isbn": "9780441172719",
+    "stock": 10,
+    "download_url": "https://ejemplo.com/dune.pdf",
+    "genre_ids": [1, 2]
+    }
 
 **Como usar el generador de reportes**
  * Crear reporte
